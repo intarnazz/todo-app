@@ -13,8 +13,8 @@ export const init = (user) => {
         <td class="task">${storage[i].task}</td>
         <td>${storage[i].status ? "Завершено" : "В процессе"}</td>
         <td>
-          <button class="btn btn-danger del-task" data-index="${i}">Удалить</button>
-          <button class="btn btn-success change-status" data-index="${i}">
+          <button class="btn btn-danger del-task" data-key="${i}">Удалить</button>
+          <button class="btn btn-success change-status" data-key="${i}">
             ${storage[i].status ? "Не готово" : "Завершить"}
           </button>
         </td>
@@ -23,6 +23,6 @@ export const init = (user) => {
     }
   }
   document.getElementById("table").innerHTML = tag;
-  
+
   addEvents(user);
 };
