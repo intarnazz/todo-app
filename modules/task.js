@@ -18,7 +18,7 @@ const getId = () => {
 };
 
 export const addTask = (task, user) => {
-  storage = [...getStorage()];
+  storage = getStorage();
   if (task && user) {
     storage.push({
       task: task,
@@ -31,13 +31,13 @@ export const addTask = (task, user) => {
 };
 
 export const delTask = (i, user) => {
-  storage = [...getStorage()];
+  storage = getStorage();
   storage.splice(i, 1);
   setItem(storage, user);
 };
 
 export const changeTaskStatus = (i, user) => {
-  storage = [...getStorage()];
+  storage = getStorage();
   storage[i].status = !storage[i].status;
   setItem(storage, user);
 };
